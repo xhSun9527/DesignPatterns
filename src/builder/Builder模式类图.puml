@@ -1,0 +1,23 @@
+@startuml
+abstract class Builder{
+    + buildPartA() : void
+    + buildPartB() : void
+    + buildPartC() : void
+}
+
+class Director{
+    + constract()
+}
+
+class ConcreteBuilder{
+    + buildPartA()
+    + buildPartB() : void
+    + buildPartC() : void
+}
+
+class Product{}
+
+Director o-- Builder
+Builder <|-- ConcreteBuilder
+Product <.left. ConcreteBuilder : <<use>>
+@enduml
