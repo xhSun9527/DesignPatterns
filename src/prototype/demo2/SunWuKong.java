@@ -8,7 +8,7 @@ import javax.swing.*;
 public class SunWuKong extends JPanel implements Cloneable {
 
     public SunWuKong(){
-        JLabel jLabel = new JLabel(new ImageIcon("src/sunwukong.jpeg"));
+        JLabel jLabel = new JLabel(new ImageIcon("src/images/sunwukong.jpeg"));
         this.add(jLabel);
     }
 

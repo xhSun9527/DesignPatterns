@@ -1,0 +1,23 @@
+@startuml
+interface Strategy{
+    + method() : void
+}
+
+class ConStrategyA{
+    + method() : void
+}
+
+class ConStrategyB{
+    + method() : void
+}
+
+class Context{
+    + method() : void
+    + setStrategy(Strategy) : void
+}
+
+Strategy <.. ConStrategyA
+Strategy <.. ConStrategyB
+
+Context o--Strategy
+@enduml
