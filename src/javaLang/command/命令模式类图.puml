@@ -1,0 +1,29 @@
+@startuml
+interface Command{
+    + execute() : void
+}
+
+class Receiver{
+    - command : Command
+
+    + action() : void
+}
+
+class ConCommand{
+    - receiver : Receiver
+
+    + ConCommand(Receiver)
+    + execute() : void
+
+}
+
+class Invoker{
+    - command : Command
+    + Invoker(Command)
+    + action() : void
+}
+
+Command o--> Invoker
+Command <.. ConCommand
+Receiver <-- ConCommand
+@enduml
