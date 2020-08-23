@@ -1,0 +1,34 @@
+@startuml
+abstract class Component{
+    + operate() : void
+}
+
+abstract class Decorator{
+    - component : Component
+    + Decorator(Component)
+    + operate() : void
+}
+class ConcreteComponent{
+    + operate() : void
+}
+
+class ConcreteDecoratorA{
+    + ConcreteDecoratorA(Component)
+    + operate() : void
+    + operateA() : void
+    + operateB() : void
+}
+class ConcreteDecoratorB{
+    + ConcreteDecoratorB(Component)
+    + operate() : void
+    + operateA() : void
+    + operateB() : void
+}
+
+Component <|-left- ConcreteComponent
+Component <|-right- Decorator
+Component <.. Decorator
+Decorator o-- Component
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-right- ConcreteDecoratorB
+@enduml

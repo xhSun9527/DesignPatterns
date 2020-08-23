@@ -1,0 +1,18 @@
+@startuml
+
+interface State{
+    + doSomething() : void
+}
+
+class ConStateA{
+    + doSomething() : void
+}
+
+class ConStateB{
+    + doSomething() : void
+}
+
+State <.. ConStateA
+State <.. ConStateB
+
+@enduml

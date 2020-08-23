@@ -1,0 +1,20 @@
+@startuml
+
+abstract class Product{
+    + method() : void
+}
+abstract class Factory{
+    + createProduct() : Product
+}
+
+class ConcreteProduct{
+    + method() : void
+}
+class ConcreteFactory{
+    + createProduct() : Product
+}
+
+Product <|-- ConcreteProduct
+ConcreteProduct <.right. ConcreteFactory
+Factory <|-- ConcreteFactory
+@enduml

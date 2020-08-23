@@ -14,19 +14,15 @@ public abstract class Computer {
 
     /**
      * 设置主板
-     *
-     * @param board
      */
-    public void setBoard(String board) {
+    void setBoard(String board) {
         mBoard = board;
     }
 
     /**
      * 设置显示器
-     *
-     * @param display
      */
-    public void setDisplay(String display) {
+    void setDisplay(String display) {
         mDisplay = display;
     }
 

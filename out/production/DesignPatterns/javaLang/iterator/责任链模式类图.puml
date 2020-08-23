@@ -1,0 +1,18 @@
+@startuml
+abstract class Handler{
+    ~ successor : Handler
+
+    + abstract handleRequest() : void
+}
+
+class ConHandler1{
+    + handleRequest() : void
+}
+class ConHandler2{
+    + handleRequest() : void
+}
+
+Handler <|-- ConHandler1
+Handler <|-- ConHandler2
+Handler o-- Handler
+@enduml
