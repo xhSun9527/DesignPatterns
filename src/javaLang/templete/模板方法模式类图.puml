@@ -1,0 +1,12 @@
+@startuml
+abstract class AbsTemplate{
+    # stepOne() : void
+    # stepTwo() : void
+    # stepThree() : void
+}
+class ConTemplateA{}
+class ConTemplateB{}
+
+AbsTemplate o-- ConTemplateA
+AbsTemplate o-- ConTemplateB
+@enduml
