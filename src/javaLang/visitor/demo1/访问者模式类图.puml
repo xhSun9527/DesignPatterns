@@ -1,0 +1,43 @@
+@startuml
+abstract class Visitor{
+    + visitElementA(ElementA)
+    + visitElementB(ElementB):void
+}
+
+class ConVisitorA{
+    + visitElementA(ElementA)
+    + visitElementB(ElementB):void
+}
+class ConVisitorB{
+    + visitElementA(ElementA)
+    + visitElementB(ElementB):void
+}
+
+Visitor <|-- ConVisitorA
+Visitor <|-- ConVisitorB
+
+class Element{
+    + accept(Visitor)
+}
+class ElementA{
+    + accept(Visitor)
+    + operationA()
+}
+class ElementB{
+    + accept(Visitor)
+    + operationB()
+}
+
+Element <|-- ElementA
+Element <|-- ElementB
+
+Visitor <.right. Client
+class Client{}
+
+class ObjectStructure{}
+
+ObjectStructure <.up. Client
+ObjectStructure o.. Element
+
+
+@enduml
