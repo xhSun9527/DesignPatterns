@@ -1,0 +1,37 @@
+@startuml
+abstract class Mediator{
+    + register(Colleague colleague): void
+    + relay(Colleague colleague): void
+}
+
+
+Mediator <|-- ConcreteMediator
+
+abstract class Colleague{
+    # mediator : Mediator
+    + setMedium(Mediator mediator) : void
+    + receive() : void
+    + send() : void
+}
+
+class ConcreteMediator{
+    - colleagueList : List<Colleague>
+    + register(Colleague colleague) : void
+    + relay(Colleague colleague) : void
+}
+
+class ConcreteColleague1{
+    + receive() : void
+    + send() : void
+}
+
+class ConcreteColleague2{
+    + receive() : void
+    + send() : void
+}
+
+Colleague <|-- ConcreteColleague1
+Colleague <|-- ConcreteColleague2
+Colleague o-- Mediator
+ConcreteMediator o-- Colleague
+@enduml
